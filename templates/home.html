@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>my title</title>
+    {% if title %}
+      <title>my title - {{ atitle }} </title>
+    {% else %}
+      <title>my title</title>
+    {% endif %}
+
   </head>
   <body>
       {% for post in posts %}
