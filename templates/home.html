@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    {% if title %}
-      <title>my title - {{ atitle }} </title>
-    {% else %}
-      <title>my title</title>
-    {% endif %}
-
-  </head>
-  <body>
-      {% for post in posts %}
-        <h1> {{post.title}} </h1>
-        <p>by {{post.author}} on {{posted_date}}</p>
-        <p> {{post.content}} </p>
-      {% endfor %}
-  </body>
-</html>
+{% extends 'layout.html' %}
+{% block content %}
+  {% for post in posts %}
+    <h1> {{post.title}} </h1>
+    <p>by {{post.author}} on {{post.posted_date}}</p>
+    <p> {{post.content}} </p>
+  {% endfor %}
+{% endblock content %}
